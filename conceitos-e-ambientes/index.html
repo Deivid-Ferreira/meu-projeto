@@ -107,30 +107,22 @@
 			color:#fff;
 		}
 
-		.logo-marca{
-			width:52px;
-			height:52px;
+		.logo-img{
+			width:56px;
+			height:56px;
+			object-fit:cover;
+			object-position:left center;
 			border-radius:14px;
-			background:linear-gradient(135deg, #79B13B, #3F7F2E);
-			position:relative;
+			flex-shrink:0;
 		}
 
-		.logo-marca:after{
-			content:'';
-			position:absolute;
-			inset:13px;
-			background:#fff;
-			clip-path:polygon(0 0,100% 50%,0 100%);
-			opacity:.9;
-		}
-
-		.logo strong{
+		.logo-text strong{
 			display:block;
 			font-size:24px;
 			line-height:22px;
 		}
 
-		.logo span{
+		.logo-text span{
 			display:block;
 			font-size:13px;
 			color:rgba(255,255,255,.75);
@@ -668,8 +660,8 @@
 <header class="topo">
 	<div class="container">
 		<a href="#" class="logo">
-			<span class="logo-marca"></span>
-			<div>
+			<img src="logo.png" alt="Logo Conceitos e Ambientes" class="logo-img">
+			<div class="logo-text">
 				<strong>conceitos<br>& ambientes</strong>
 				<span>materiais de construção</span>
 			</div>
