@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+	/* Mobile/Desktop redirect */
+	(function () {
+		var ua = navigator.userAgent || navigator.vendor || window.opera || '';
+		var isIpadOS = navigator.maxTouchPoints > 1 && /Macintosh/i.test(ua);
+		var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || isIpadOS;
+
+		if (!isMobile) {
+			var target = new URL('../', window.location.href);
+			target.search = window.location.search;
+			target.hash = window.location.hash;
+			window.location.replace(target.toString());
+		}
+	})();
+	</script>
+	<title>Conceitos & Ambientes | Mobile</title>
+	<style>
+		:root{
+			--verde:#79B13B;
+			--verde-escuro:#5f912d;
+			--preto:#1F1F1F;
+			--fundo:#F4F5F0;
+			--texto:#4B4B4B;
+			--branco:#FFFFFF;
+		}
+
+		*{
+			box-sizing:border-box;
+			margin:0;
+			padding:0;
+		}
+
+		body{
+			font-family:'Inter', Arial, sans-serif;
+			background:var(--fundo);
+			color:var(--preto);
+			padding-bottom:32px;
+		}
+
+		a{
+			text-decoration:none;
+			color:inherit;
+		}
+
+		img{
+			max-width:100%;
+			display:block;
+		}
+
+		.topo{
+			background:#121212;
+			color:#fff;
+			padding:16px;
+			position:sticky;
+			top:0;
+			z-index:40;
+		}
+
+		.logo{
+			display:flex;
+			align-items:center;
+			gap:12px;
+		}
+
+		.logo img{
+			width:48px;
+			height:48px;
+			border-radius:12px;
+			object-fit:cover;
+			object-position:left center;
+		}
+
+		.logo strong{
+			display:block;
+			font-size:24px;
+			line-height:22px;
+		}
+
+		.logo small{
+			display:block;
+			font-size:13px;
+			color:rgba(255,255,255,.8);
+			margin-top:2px;
+		}
+
+		.badge-mobile{
+			margin-top:12px;
+			display:inline-block;
+			background:rgba(121,177,59,.22);
+			color:#cbeea0;
+			border:1px solid rgba(121,177,59,.55);
+			padding:6px 10px;
+			border-radius:999px;
+			font-size:11px;
+			font-weight:700;
+			letter-spacing:.3px;
+			text-transform:uppercase;
+		}
+
+		.hero{
+			padding:18px 16px 8px;
+		}
+
+		.hero-card{
+			border-radius:22px;
+			overflow:hidden;
+			box-shadow:0 12px 26px rgba(0,0,0,.2);
+			position:relative;
+		}
+
+		.hero-card img{
+			width:100%;
+			height:240px;
+			object-fit:cover;
+		}
+
+		.hero-overlay{
+			position:absolute;
+			inset:0;
+			padding:18px;
+			display:flex;
+			flex-direction:column;
+			justify-content:flex-end;
+			background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.08));
+			color:#fff;
+		}
+
+		.hero-overlay h1{
+			font-size:30px;
+			line-height:32px;
+			margin-bottom:10px;
+		}
+
+		.hero-overlay p{
+			font-size:15px;
+			line-height:22px;
+			color:rgba(255,255,255,.9);
+		}
+
+		.botoes{
+			display:grid;
+			grid-template-columns:1fr 1fr;
+			gap:10px;
+			margin-top:16px;
+		}
+
+		.btn{
+			display:inline-flex;
+			align-items:center;
+			justify-content:center;
+			padding:12px 12px;
+			border-radius:12px;
+			font-size:12px;
+			font-weight:800;
+			text-transform:uppercase;
+			letter-spacing:.4px;
+		}
+
+		.btn-verde{
+			background:var(--verde);
+			color:#fff;
+		}
+
+		.btn-verde:hover{
+			background:var(--verde-escuro);
+		}
+
+		.btn-dark{
+			background:#2a2a2a;
+			color:#fff;
+		}
+
+		.secao{
+			padding:18px 16px 0;
+		}
+
+		.secao h2{
+			font-size:22px;
+			line-height:26px;
+			margin-bottom:12px;
+		}
+
+		.secao p{
+			font-size:15px;
+			line-height:23px;
+			color:var(--texto);
+		}
+
+		.lista{
+			display:grid;
+			gap:10px;
+			margin-top:14px;
+		}
+
+		.item{
+			background:#fff;
+			border-radius:14px;
+			padding:14px;
+			box-shadow:0 6px 16px rgba(0,0,0,.06);
+		}
+
+		.item strong{
+			display:block;
+			font-size:16px;
+			margin-bottom:6px;
+		}
+
+		.item span{
+			font-size:14px;
+			line-height:21px;
+			color:#616161;
+		}
+
+		.contato{
+			padding:22px 16px 0;
+		}
+
+		.contato-card{
+			background:#1F1F1F;
+			color:#fff;
+			border-radius:18px;
+			padding:18px;
+		}
+
+		.contato-card h3{
+			font-size:20px;
+			margin-bottom:12px;
+		}
+
+		.contato-card ul{
+			list-style:none;
+			display:grid;
+			gap:7px;
+			color:rgba(255,255,255,.86);
+			font-size:14px;
+		}
+	</style>
+</head>
+<body>
+
+<header class="topo">
+	<a href="../" class="logo">
+		<img src="../logo.png" alt="Logo Conceitos e Ambientes">
+		<div>
+			<strong>conceitos<br>& ambientes</strong>
+			<small>materiais de construção</small>
+		</div>
+	</a>
+	<span class="badge-mobile">Versão Mobile</span>
+</header>
+
+<section class="hero">
+	<div class="hero-card">
+		<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=90&w=1200&auto=format&fit=crop" alt="Casa de banho moderna">
+		<div class="hero-overlay">
+			<h1>Construção, design e acabamentos</h1>
+			<p>Soluções práticas para obras e remodelações, com atendimento personalizado.</p>
+		</div>
+	</div>
+	<div class="botoes">
+		<a href="#produtos" class="btn btn-verde">Ver Produtos</a>
+		<a href="#contactos" class="btn btn-dark">Contactar</a>
+	</div>
+</section>
+
+<section class="secao" id="produtos">
+	<h2>Produtos em destaque</h2>
+	<div class="lista">
+		<div class="item">
+			<strong>Sanitários</strong>
+			<span>Lavatórios, torneiras, sanitas e acessórios modernos.</span>
+		</div>
+		<div class="item">
+			<strong>Cerâmica e Pavimentos</strong>
+			<span>Revestimentos para interiores e exteriores.</span>
+		</div>
+		<div class="item">
+			<strong>Pisos Flutuantes</strong>
+			<span>Madeira, laminado e vinil para vários espaços.</span>
+		</div>
+		<div class="item">
+			<strong>Construção e Decoração</strong>
+			<span>Materiais completos para obras e remodelações.</span>
+		</div>
+	</div>
+</section>
+
+<section class="secao">
+	<h2>Serviços</h2>
+	<div class="lista">
+		<div class="item">
+			<strong>Consultoria Técnica</strong>
+			<span>Ajudamos a escolher os materiais ideais para cada projeto.</span>
+		</div>
+		<div class="item">
+			<strong>Soluções Completas</strong>
+			<span>Produtos para construção, renovação e acabamento.</span>
+		</div>
+	</div>
+</section>
+
+<section class="contato" id="contactos">
+	<div class="contato-card">
+		<h3>Contactos</h3>
+		<ul>
+			<li>N105 1699, 4835-164 Guimarães</li>
+			<li>geral@conceitoseambientes.pt</li>
+			<li>+351 000 000 000</li>
+		</ul>
+	</div>
+</section>
+
+</body>
+</html>
