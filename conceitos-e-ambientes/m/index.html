@@ -18,15 +18,22 @@
 		}
 	})();
 	</script>
-	<title>Conceitos & Ambientes | Mobile</title>
+	<title>Conceitos & Ambientes | Materiais de ConstruÃ§Ã£o</title>
+	<meta name="description" content="Materiais de construÃ§Ã£o, decoraÃ§Ã£o, cerÃ¢mica e acabamentos de qualidade em GuimarÃ£es.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 	<style>
 		:root{
 			--verde:#79B13B;
-			--verde-escuro:#5f912d;
+			--verde-escuro:#689C31;
 			--preto:#1F1F1F;
-			--fundo:#F4F5F0;
-			--texto:#4B4B4B;
+			--preto2:#111111;
+			--fundo:#F5F5F2;
+			--texto:#555555;
 			--branco:#FFFFFF;
+			--largura:1300px;
 		}
 
 		*{
@@ -39,7 +46,6 @@
 			font-family:'Inter', Arial, sans-serif;
 			background:var(--fundo);
 			color:var(--preto);
-			padding-bottom:32px;
 		}
 
 		a{
@@ -52,113 +58,26 @@
 			display:block;
 		}
 
-		.topo{
-			background:#121212;
-			color:#fff;
-			padding:16px;
-			position:sticky;
-			top:0;
-			z-index:40;
-		}
-
-		.logo{
-			display:flex;
-			align-items:center;
-			gap:12px;
-		}
-
-		.logo img{
-			width:48px;
-			height:48px;
-			border-radius:12px;
-			object-fit:cover;
-			object-position:left center;
-		}
-
-		.logo strong{
-			display:block;
-			font-size:24px;
-			line-height:22px;
-		}
-
-		.logo small{
-			display:block;
-			font-size:13px;
-			color:rgba(255,255,255,.8);
-			margin-top:2px;
-		}
-
-		.badge-mobile{
-			margin-top:12px;
-			display:inline-block;
-			background:rgba(121,177,59,.22);
-			color:#cbeea0;
-			border:1px solid rgba(121,177,59,.55);
-			padding:6px 10px;
-			border-radius:999px;
-			font-size:11px;
-			font-weight:700;
-			letter-spacing:.3px;
-			text-transform:uppercase;
-		}
-
-		.hero{
-			padding:18px 16px 8px;
-		}
-
-		.hero-card{
-			border-radius:22px;
-			overflow:hidden;
-			box-shadow:0 12px 26px rgba(0,0,0,.2);
-			position:relative;
-		}
-
-		.hero-card img{
+		.container{
 			width:100%;
-			height:240px;
-			object-fit:cover;
-		}
-
-		.hero-overlay{
-			position:absolute;
-			inset:0;
-			padding:18px;
-			display:flex;
-			flex-direction:column;
-			justify-content:flex-end;
-			background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.08));
-			color:#fff;
-		}
-
-		.hero-overlay h1{
-			font-size:30px;
-			line-height:32px;
-			margin-bottom:10px;
-		}
-
-		.hero-overlay p{
-			font-size:15px;
-			line-height:22px;
-			color:rgba(255,255,255,.9);
-		}
-
-		.botoes{
-			display:grid;
-			grid-template-columns:1fr 1fr;
-			gap:10px;
-			margin-top:16px;
+			max-width:var(--largura);
+			margin:0 auto;
+			padding:0 32px;
 		}
 
 		.btn{
 			display:inline-flex;
 			align-items:center;
 			justify-content:center;
-			padding:12px 12px;
-			border-radius:12px;
-			font-size:12px;
+			padding:16px 34px;
+			border-radius:999px;
+			font-size:13px;
 			font-weight:800;
 			text-transform:uppercase;
-			letter-spacing:.4px;
+			letter-spacing:.5px;
+			transition:.3s;
+			border:1px solid transparent;
+			cursor:pointer;
 		}
 
 		.btn-verde{
@@ -170,150 +89,825 @@
 			background:var(--verde-escuro);
 		}
 
-		.btn-dark{
-			background:#2a2a2a;
+		.btn-transparente{
+			border-color:#fff;
 			color:#fff;
 		}
 
-		.secao{
-			padding:18px 16px 0;
-		}
-
-		.secao h2{
-			font-size:22px;
-			line-height:26px;
-			margin-bottom:12px;
-		}
-
-		.secao p{
-			font-size:15px;
-			line-height:23px;
-			color:var(--texto);
-		}
-
-		.lista{
-			display:grid;
-			gap:10px;
-			margin-top:14px;
-		}
-
-		.item{
+		.btn-transparente:hover{
 			background:#fff;
-			border-radius:14px;
-			padding:14px;
-			box-shadow:0 6px 16px rgba(0,0,0,.06);
+			color:#111;
 		}
 
-		.item strong{
-			display:block;
-			font-size:16px;
-			margin-bottom:6px;
+		/* TOPO */
+		.topo{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			z-index:20;
+			padding:26px 0;
 		}
 
-		.item span{
-			font-size:14px;
-			line-height:21px;
-			color:#616161;
+		.topo .container{
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
 		}
 
-		.contato{
-			padding:22px 16px 0;
-		}
-
-		.contato-card{
-			background:#1F1F1F;
+		.logo{
+			display:flex;
+			align-items:center;
+			gap:14px;
 			color:#fff;
+		}
+
+		.logo-img{
+			width:56px;
+			height:56px;
+			object-fit:cover;
+			object-position:left center;
+			border-radius:14px;
+			flex-shrink:0;
+		}
+
+		.logo-text strong{
+			display:block;
+			font-size:24px;
+			line-height:22px;
+		}
+
+		.logo-text span{
+			display:block;
+			font-size:13px;
+			color:rgba(255,255,255,.75);
+			margin-top:3px;
+		}
+
+		.menu{
+			display:flex;
+			align-items:center;
+			gap:34px;
+			color:#fff;
+			font-size:13px;
+			font-weight:800;
+			text-transform:uppercase;
+		}
+
+		.menu a{
+			transition:.3s;
+		}
+
+		.menu a:hover,
+		.menu a.ativo{
+			color:var(--verde);
+		}
+
+		/* HERO */
+		.hero{
+			position:relative;
+			min-height:820px;
+			display:flex;
+			align-items:center;
+			overflow:hidden;
+			background:#111;
+		}
+
+		.hero-bg{
+			position:absolute;
+			inset:0;
+			width:100%;
+			height:100%;
+			object-fit:cover;
+		}
+
+		.hero:before{
+			content:'';
+			position:absolute;
+			inset:0;
+			background:linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.42), rgba(0,0,0,.55));
+			z-index:1;
+		}
+
+		.hero .container{
+			position:relative;
+			z-index:2;
+		}
+
+		.hero-texto{
+			max-width:760px;
+			color:#fff;
+		}
+
+		.label{
+			font-size:13px;
+			font-weight:800;
+			letter-spacing:4px;
+			text-transform:uppercase;
+			color:var(--verde);
+			margin-bottom:22px;
+		}
+
+		.hero h1{
+			font-size:72px;
+			line-height:78px;
+			font-weight:800;
+			letter-spacing:-2px;
+		}
+
+		.hero p{
+			max-width:650px;
+			font-size:19px;
+			line-height:32px;
+			color:rgba(255,255,255,.82);
+			margin-top:28px;
+		}
+
+		.hero-botoes{
+			display:flex;
+			gap:18px;
+			margin-top:42px;
+		}
+
+		.card-hero{
+			position:absolute;
+			right:calc((100% - var(--largura)) / 2 + 32px);
+			bottom:112px;
+			z-index:4;
+			width:360px;
+			background:rgba(255,255,255,.96);
+			border-radius:32px;
+			padding:32px;
+			box-shadow:0 28px 70px rgba(0,0,0,.35);
+		}
+
+		.card-hero .desde{
+			color:var(--verde);
+			font-size:12px;
+			font-weight:800;
+			text-transform:uppercase;
+			letter-spacing:2px;
+		}
+
+		.card-hero h2{
+			font-size:30px;
+			margin:12px 0;
+		}
+
+		.card-hero p{
+			color:#666;
+			line-height:24px;
+		}
+
+		.card-numeros{
+			display:grid;
+			grid-template-columns:1fr 1fr;
+			gap:12px;
+			margin-top:24px;
+		}
+
+		.card-numeros div{
+			background:#F5F5F2;
 			border-radius:18px;
 			padding:18px;
+			text-align:center;
 		}
 
-		.contato-card h3{
-			font-size:20px;
-			margin-bottom:12px;
+		.card-numeros strong{
+			display:block;
+			font-size:28px;
 		}
 
-		.contato-card ul{
-			list-style:none;
+		.card-numeros span{
+			font-size:12px;
+			color:#777;
+		}
+
+		/* CATEGORIAS */
+		.categorias{
+			position:relative;
+			z-index:5;
+			margin-top:-95px;
+			padding-bottom:90px;
+		}
+
+		.grid-categorias{
 			display:grid;
-			gap:7px;
-			color:rgba(255,255,255,.86);
+			grid-template-columns:repeat(4,1fr);
+			gap:24px;
+		}
+
+		.card-categoria{
+			position:relative;
+			height:340px;
+			border-radius:28px;
+			overflow:hidden;
+			box-shadow:0 22px 45px rgba(0,0,0,.22);
+			background:#111;
+		}
+
+		.card-categoria img{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+			transition:.7s;
+		}
+
+		.card-categoria:hover img{
+			transform:scale(1.08);
+		}
+
+		.card-categoria:after{
+			content:'';
+			position:absolute;
+			inset:0;
+			background:linear-gradient(to top, rgba(0,0,0,.86), rgba(0,0,0,.18), transparent);
+		}
+
+		.card-categoria .info{
+			position:absolute;
+			left:0;
+			bottom:0;
+			z-index:2;
+			padding:30px;
+			color:#fff;
+		}
+
+		.card-categoria small{
+			font-size:11px;
+			text-transform:uppercase;
+			letter-spacing:3px;
+			color:rgba(255,255,255,.7);
+		}
+
+		.card-categoria h3{
+			font-size:26px;
+			line-height:30px;
+			margin:10px 0;
+		}
+
+		.card-categoria p{
 			font-size:14px;
+			line-height:22px;
+			color:rgba(255,255,255,.78);
+		}
+
+		/* SOBRE */
+		.sobre{
+			padding:90px 0;
+		}
+
+		.sobre-grid{
+			dis:grid;
+			display:grid;
+			grid-template-columns:1fr 1fr;
+			gap:70px;
+			align-items:center;
+		}
+
+		.sobre-img{
+			position:relative;
+		}
+
+		.sobre-img img{
+			width:100%;
+			height:620px;
+			object-fit:cover;
+			border-radius:36px;
+			box-shadow:0 25px 60px rgba(0,0,0,.16);
+		}
+
+		.sobre-selo{
+			position:absolute;
+			right:-24px;
+			bottom:-28px;
+			background:#1F1F1F;
+			color:#fff;
+			border-radius:26px;
+			padding:28px;
+			max-width:260px;
+			box-shadow:0 20px 45px rgba(0,0,0,.3);
+		}
+
+		.sobre-selo span{
+			color:var(--verde);
+			font-size:12px;
+			font-weight:800;
+			text-transform:uppercase;
+			letter-spacing:2px;
+		}
+
+		.sobre-selo strong{
+			display:block;
+			font-size:40px;
+			margin:8px 0;
+		}
+
+		.sobre-conteudo h2,
+		.titulo-sessao{
+			font-size:52px;
+			line-height:58px;
+			font-weight:800;
+			letter-spacing:-1px;
+		}
+
+		.sobre-conteudo p{
+			font-size:17px;
+			line-height:30px;
+			color:#666;
+			margin-top:22px;
+		}
+
+		.lista-diferenciais{
+			display:grid;
+			grid-template-columns:1fr 1fr;
+			gap:14px;
+			margin-top:34px;
+		}
+
+		.lista-diferenciais div{
+			background:#fff;
+			border-radius:18px;
+			padding:18px;
+			display:flex;
+			align-items:center;
+			gap:14px;
+			box-shadow:0 10px 24px rgba(0,0,0,.04);
+		}
+
+		.lista-diferenciais span{
+			width:38px;
+			height:38px;
+			border-radius:50%;
+			background:var(--verde);
+			color:#fff;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			font-weight:800;
+		}
+
+		/* SERVIÃ‡OS */
+		.servicos{
+			background:#fff;
+			padding:100px 0;
+		}
+
+		.servicos-topo{
+			display:flex;
+			align-items:flex-end;
+			justify-content:space-between;
+			gap:40px;
+			margin-bottom:56px;
+		}
+
+		.grid-servicos{
+			display:grid;
+			grid-template-columns:repeat(3,1fr);
+			gap:24px;
+		}
+
+		.card-servico{
+			background:#F5F5F2;
+			border:1px solid rgba(0,0,0,.05);
+			border-radius:28px;
+			padding:34px;
+			transition:.35s;
+		}
+
+		.card-servico:hover{
+			background:#1F1F1F;
+			color:#fff;
+			transform:translateY(-4px);
+		}
+
+		.card-servico span{
+			color:var(--verde);
+			font-size:13px;
+			font-weight:800;
+			letter-spacing:2px;
+		}
+
+		.card-servico h3{
+			font-size:25px;
+			line-height:30px;
+			margin:28px 0 14px;
+		}
+
+		.card-servico p{
+			color:#666;
+			line-height:25px;
+		}
+
+		.card-servico:hover p{
+			color:rgba(255,255,255,.72);
+		}
+
+		/* AMBIENTES */
+		.ambientes{
+			padding:100px 0;
+		}
+
+		.ambientes .intro{
+			text-align:center;
+			max-width:800px;
+			margin:0 auto 54px;
+		}
+
+		.grid-ambientes{
+			display:grid;
+			grid-template-columns:repeat(4,1fr);
+			grid-auto-rows:250px;
+			gap:24px;
+		}
+
+		.grid-ambientes figure{
+			border-radius:30px;
+			overflow:hidden;
+			box-shadow:0 18px 35px rgba(0,0,0,.15);
+		}
+
+		.grid-ambientes figure:first-child{
+			grid-column:span 2;
+			grid-row:span 2;
+		}
+
+		.grid-ambientes figure:last-child{
+			grid-column:span 2;
+		}
+
+		.grid-ambientes img{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+			transition:.6s;
+		}
+
+		.grid-ambientes figure:hover img{
+			transform:scale(1.05);
+		}
+
+		/* CTA */
+		.cta{
+			background:#1F1F1F;
+			color:#fff;
+			padding:95px 0;
+		}
+
+		.cta-grid{
+			display:grid;
+			grid-template-columns:1fr 1fr;
+			gap:70px;
+			align-items:center;
+		}
+
+		.cta h2{
+			font-size:52px;
+			line-height:58px;
+			font-weight:800;
+		}
+
+		.cta p{
+			color:rgba(255,255,255,.72);
+			font-size:18px;
+			line-height:30px;
+			margin-top:24px;
+		}
+
+		.formulario{
+			background:#fff;
+			color:#111;
+			border-radius:34px;
+			padding:38px;
+			box-shadow:0 20px 50px rgba(0,0,0,.28);
+		}
+
+		.formulario h3{
+			font-size:30px;
+			margin-bottom:24px;
+		}
+
+		.formulario input,
+		.formulario textarea{
+			width:100%;
+			border:0;
+			background:#F5F5F2;
+			border-radius:16px;
+			padding:17px 18px;
+			font-family:inherit;
+			font-size:15px;
+			outline:none;
+			margin-bottom:14px;
+		}
+
+		.formulario textarea{
+			height:120px;
+			resize:none;
+		}
+
+		/* RODAPÃ‰ */
+		.rodape{
+			background:#111;
+			color:#fff;
+			padding:80px 0 32px;
+		}
+
+		.rodape-grid{
+			display:grid;
+			grid-template-columns:2fr 1fr 1fr;
+			gap:60px;
+			padding-bottom:50px;
+			border-bottom:1px solid rgba(255,255,255,.1);
+		}
+
+		.rodape h3{
+			font-size:20px;
+			margin-bottom:20px;
+		}
+
+		.rodape p,
+		.rodape li{
+			color:rgba(255,255,255,.62);
+			line-height:28px;
+			list-style:none;
+		}
+
+		.copy{
+			display:flex;
+			justify-content:space-between;
+			gap:20px;
+			padding-top:28px;
+			color:rgba(255,255,255,.42);
+			font-size:14px;
+		}
+
+		@media(max-width:1100px){
+			.menu{display:none;}
+			.card-hero{display:none;}
+			.grid-categorias,
+			.grid-servicos{grid-template-columns:repeat(2,1fr);}
+			.sobre-grid,
+			.cta-grid{grid-template-columns:1fr;}
+			.hero h1{font-size:52px;line-height:58px;}
+			.sobre-conteudo h2,
+			.titulo-sessao,
+			.cta h2{font-size:40px;line-height:46px;}
+		}
+
+		@media(max-width:700px){
+			.container{padding:0 20px;}
+			.hero{min-height:720px;}
+			.hero h1{font-size:40px;line-height:46px;}
+			.hero-botoes{flex-direction:column;align-items:flex-start;}
+			.grid-categorias,
+			.grid-servicos,
+			.lista-diferenciais,
+			.rodape-grid{grid-template-columns:1fr;}
+			.grid-ambientes{grid-template-columns:1fr;grid-auto-rows:250px;}
+			.grid-ambientes figure:first-child,
+			.grid-ambientes figure:last-child{grid-column:auto;grid-row:auto;}
+			.copy{flex-direction:column;}
 		}
 	</style>
 </head>
 <body>
 
 <header class="topo">
-	<a href="../" class="logo">
-		<img src="../logo.png" alt="Logo Conceitos e Ambientes">
-		<div>
-			<strong>conceitos<br>& ambientes</strong>
-			<small>materiais de construção</small>
-		</div>
-	</a>
-	<span class="badge-mobile">Versão Mobile</span>
+	<div class="container">
+		<a href="#" class="logo">
+			<img src="../logo.png" alt="Logo Conceitos e Ambientes" class="logo-img">
+			<div class="logo-text">
+				<strong>conceitos<br>& ambientes</strong>
+				<span>materiais de construÃ§Ã£o</span>
+			</div>
+		</a>
+
+		<nav class="menu">
+			<a href="#" class="ativo">InÃ­cio</a>
+			<a href="#sobre">Sobre NÃ³s</a>
+			<a href="#produtos">Produtos</a>
+			<a href="#ambientes">Ambientes</a>
+			<a href="#servicos">ServiÃ§os</a>
+			<a href="#contactos">Contactos</a>
+		</nav>
+	</div>
 </header>
 
 <section class="hero">
-	<div class="hero-card">
-		<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=90&w=1200&auto=format&fit=crop" alt="Casa de banho moderna">
-		<div class="hero-overlay">
-			<h1>Construção, design e acabamentos</h1>
-			<p>Soluções práticas para obras e remodelações, com atendimento personalizado.</p>
-		</div>
-	</div>
-	<div class="botoes">
-		<a href="#produtos" class="btn btn-verde">Ver Produtos</a>
-		<a href="#contactos" class="btn btn-dark">Contactar</a>
-	</div>
-</section>
+	<img class="hero-bg" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=90&w=2400&auto=format&fit=crop" alt="Casa de banho moderna">
 
-<section class="secao" id="produtos">
-	<h2>Produtos em destaque</h2>
-	<div class="lista">
-		<div class="item">
-			<strong>Sanitários</strong>
-			<span>Lavatórios, torneiras, sanitas e acessórios modernos.</span>
+	<div class="container">
+		<div class="hero-texto">
+			<div class="label">ConstruÃ§Ã£o â€¢ DecoraÃ§Ã£o â€¢ Ambientes</div>
+			<h1>SoluÃ§Ãµes modernas para transformar espaÃ§os</h1>
+			<p>Materiais de construÃ§Ã£o, decoraÃ§Ã£o, cerÃ¢mica e acabamentos de qualidade para projectos residenciais e comerciais.</p>
+
+			<div class="hero-botoes">
+				<a href="#produtos" class="btn btn-verde">Ver Produtos</a>
+				<a href="#contactos" class="btn btn-transparente">Pedir OrÃ§amento</a>
+			</div>
 		</div>
-		<div class="item">
-			<strong>Cerâmica e Pavimentos</strong>
-			<span>Revestimentos para interiores e exteriores.</span>
-		</div>
-		<div class="item">
-			<strong>Pisos Flutuantes</strong>
-			<span>Madeira, laminado e vinil para vários espaços.</span>
-		</div>
-		<div class="item">
-			<strong>Construção e Decoração</strong>
-			<span>Materiais completos para obras e remodelações.</span>
+	</div>
+
+	<div class="card-hero">
+		<div class="desde">Desde 2011</div>
+		<h2>Qualidade & Design</h2>
+		<p>SoluÃ§Ãµes completas com atendimento especializado e materiais de qualidade.</p>
+		<div class="card-numeros">
+			<div><strong>14+</strong><span>Anos</span></div>
+			<div><strong>100%</strong><span>Personalizado</span></div>
 		</div>
 	</div>
 </section>
 
-<section class="secao">
-	<h2>Serviços</h2>
-	<div class="lista">
-		<div class="item">
-			<strong>Consultoria Técnica</strong>
-			<span>Ajudamos a escolher os materiais ideais para cada projeto.</span>
-		</div>
-		<div class="item">
-			<strong>Soluções Completas</strong>
-			<span>Produtos para construção, renovação e acabamento.</span>
+<section class="categorias" id="produtos">
+	<div class="container">
+		<div class="grid-categorias">
+							<article class="card-categoria">
+					<img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=90&w=1200&auto=format&fit=crop" alt="SanitÃ¡rios">
+					<div class="info">
+						<small>Produtos</small>
+						<h3>SanitÃ¡rios</h3>
+						<p>LavatÃ³rios, torneiras, sanitas e acessÃ³rios modernos.</p>
+					</div>
+				</article>
+							<article class="card-categoria">
+					<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=90&w=1200&auto=format&fit=crop" alt="CerÃ¢mica & Pavimentos">
+					<div class="info">
+						<small>Produtos</small>
+						<h3>CerÃ¢mica & Pavimentos</h3>
+						<p>Revestimentos para interiores e exteriores.</p>
+					</div>
+				</article>
+							<article class="card-categoria">
+					<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=90&w=1200&auto=format&fit=crop" alt="Pisos Flutuantes">
+					<div class="info">
+						<small>Produtos</small>
+						<h3>Pisos Flutuantes</h3>
+						<p>Madeira, laminado e vinil para vÃ¡rios espaÃ§os.</p>
+					</div>
+				</article>
+							<article class="card-categoria">
+					<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=90&w=1200&auto=format&fit=crop" alt="ConstruÃ§Ã£o & DecoraÃ§Ã£o">
+					<div class="info">
+						<small>Produtos</small>
+						<h3>ConstruÃ§Ã£o & DecoraÃ§Ã£o</h3>
+						<p>Materiais completos para obras e remodelaÃ§Ãµes.</p>
+					</div>
+				</article>
+					</div>
+	</div>
+</section>
+
+<section class="sobre" id="sobre">
+	<div class="container">
+		<div class="sobre-grid">
+			<div class="sobre-img">
+				<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=90&w=1600&auto=format&fit=crop" alt="Showroom Conceitos e Ambientes">
+				<div class="sobre-selo">
+					<span>ExperiÃªncia</span>
+					<strong>14+</strong>
+					<p>anos a apoiar projectos de construÃ§Ã£o, renovaÃ§Ã£o e decoraÃ§Ã£o.</p>
+				</div>
+			</div>
+
+			<div class="sobre-conteudo">
+				<div class="label">Sobre NÃ³s</div>
+				<h2>Materiais, acabamentos e aconselhamento para cada espaÃ§o</h2>
+				<p>A Conceitos e Ambientes Ã© uma empresa portuguesa localizada na N105 1699, 4835-164 GuimarÃ£es, especializada na comercializaÃ§Ã£o de materiais de construÃ§Ã£o, decoraÃ§Ã£o e soluÃ§Ãµes para espaÃ§os residenciais e comerciais.</p>
+				<p>Com foco na inovaÃ§Ã£o e na excelÃªncia, oferece produtos de qualidade, suporte tÃ©cnico e atendimento personalizado para transformar projectos em espaÃ§os funcionais e elegantes.</p>
+
+				<div class="lista-diferenciais">
+					<div><span>âœ“</span>Atendimento personalizado</div>
+					<div><span>âœ“</span>Suporte tÃ©cnico especializado</div>
+					<div><span>âœ“</span>Produtos de qualidade</div>
+					<div><span>âœ“</span>SoluÃ§Ãµes para cada projecto</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section class="contato" id="contactos">
-	<div class="contato-card">
-		<h3>Contactos</h3>
-		<ul>
-			<li>N105 1699, 4835-164 Guimarães</li>
-			<li>geral@conceitoseambientes.pt</li>
-			<li>+351 000 000 000</li>
-		</ul>
+<section class="servicos" id="servicos">
+	<div class="container">
+		<div class="servicos-topo">
+			<div>
+				<div class="label">ServiÃ§os</div>
+				<h2 class="titulo-sessao">SoluÃ§Ãµes completas para construir, renovar e decorar</h2>
+			</div>
+			<a href="#contactos" class="btn btn-verde">Conhecer soluÃ§Ãµes</a>
+		</div>
+
+		<div class="grid-servicos">
+							<article class="card-servico">
+					<span>01</span>
+					<h3>SanitÃ¡rios e acessÃ³rios</h3>
+					<p>LavatÃ³rios, bidÃ©s, sanitas, torneiras e acessÃ³rios para casas de banho.</p>
+				</article>
+							<article class="card-servico">
+					<span>02</span>
+					<h3>CerÃ¢mica e pavimentos</h3>
+					<p>Revestimentos cerÃ¢micos e pavimentos para interiores e exteriores.</p>
+				</article>
+							<article class="card-servico">
+					<span>03</span>
+					<h3>Materiais de construÃ§Ã£o</h3>
+					<p>Produtos variados para obras e projectos de construÃ§Ã£o civil.</p>
+				</article>
+							<article class="card-servico">
+					<span>04</span>
+					<h3>Pisos flutuantes</h3>
+					<p>Madeira, laminado ou vinil para espaÃ§os residenciais e comerciais.</p>
+				</article>
+							<article class="card-servico">
+					<span>05</span>
+					<h3>Sistemas de aquecimento</h3>
+					<p>Equipamentos e soluÃ§Ãµes para conforto tÃ©rmico dos espaÃ§os.</p>
+				</article>
+							<article class="card-servico">
+					<span>06</span>
+					<h3>Consultoria tÃ©cnica</h3>
+					<p>Aconselhamento na escolha de materiais adequados a cada projecto.</p>
+				</article>
+					</div>
 	</div>
 </section>
+
+<section class="ambientes" id="ambientes">
+	<div class="container">
+		<div class="intro">
+			<div class="label">Ambientes</div>
+			<h2 class="titulo-sessao">InspiraÃ§Ã£o para espaÃ§os modernos e funcionais</h2>
+		</div>
+
+		<div class="grid-ambientes">
+			<figure><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=90&w=1600&auto=format&fit=crop" alt="Casa de banho"></figure>
+			<figure><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=90&w=1200&auto=format&fit=crop" alt="Interior moderno"></figure>
+			<figure><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=90&w=1200&auto=format&fit=crop" alt="DecoraÃ§Ã£o"></figure>
+			<figure><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=90&w=1600&auto=format&fit=crop" alt="Pavimentos"></figure>
+		</div>
+	</div>
+</section>
+
+<section class="cta" id="contactos">
+	<div class="container">
+		<div class="cta-grid">
+			<div>
+				<div class="label">OrÃ§amento</div>
+				<h2>Precisa de ajuda para escolher os materiais certos?</h2>
+				<p>A nossa equipa ajuda a encontrar a melhor soluÃ§Ã£o para o seu espaÃ§o, com orientaÃ§Ã£o tÃ©cnica e atendimento personalizado.</p>
+			</div>
+
+			<form class="formulario" method="post" action="">
+				<h3>Fale connosco</h3>
+				<input type="text" name="nome" placeholder="Nome">
+				<input type="text" name="telefone" placeholder="Telefone / WhatsApp">
+				<input type="email" name="email" placeholder="Email">
+				<textarea name="mensagem" placeholder="Como podemos ajudar?"></textarea>
+				<button type="submit" class="btn btn-verde">Enviar pedido</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+<footer class="rodape">
+	<div class="container">
+		<div class="rodape-grid">
+			<div>
+				<h3>Conceitos & Ambientes</h3>
+				<p>Empresa portuguesa especializada em materiais de construÃ§Ã£o, decoraÃ§Ã£o, cerÃ¢mica, pavimentos, pisos flutuantes, aquecimento e soluÃ§Ãµes para espaÃ§os residenciais e comerciais.</p>
+			</div>
+
+			<div>
+				<h3>Menu</h3>
+				<ul>
+					<li>InÃ­cio</li>
+					<li>Sobre NÃ³s</li>
+					<li>Produtos</li>
+					<li>Ambientes</li>
+					<li>Contactos</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>Contactos</h3>
+				<ul>
+					<li>N105 1699, 4835-164 GuimarÃ£es</li>
+					<li>GuimarÃ£es, Portugal</li>
+					<li>geral@conceitoseambientes.pt</li>
+					<li>+351 000 000 000</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="copy">
+			<p>Â© 2026 Conceitos & Ambientes. Todos os direitos reservados.</p>
+			<p>ConstruÃ§Ã£o â€¢ DecoraÃ§Ã£o â€¢ Ambientes</p>
+		</div>
+	</div>
+</footer>
 
 </body>
 </html>
+
+
