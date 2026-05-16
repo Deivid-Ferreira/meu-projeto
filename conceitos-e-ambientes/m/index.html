@@ -18,6 +18,27 @@
 		}
 	})();
 	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var topo = document.querySelector('.topo');
+		var toggle = document.querySelector('.menu-toggle');
+		var menu = document.getElementById('menuMobile');
+
+		if (!topo || !toggle || !menu) return;
+
+		toggle.addEventListener('click', function () {
+			var open = topo.classList.toggle('menu-open');
+			toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+		});
+
+		menu.querySelectorAll('a').forEach(function (link) {
+			link.addEventListener('click', function () {
+				topo.classList.remove('menu-open');
+				toggle.setAttribute('aria-expanded', 'false');
+			});
+		});
+	});
+	</script>
 	<title>Conceitos & Ambientes | Materiais de Construção</title>
 	<meta name="description" content="Materiais de construção, decoração, cerâmica e acabamentos de qualidade em Guimarães.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -671,8 +692,9 @@
 		}
 
 		.topo .container{
-			flex-direction:column;
-			align-items:flex-start;
+			display:grid;
+			grid-template-columns:1fr auto;
+			align-items:center;
 			gap:10px;
 		}
 
@@ -691,26 +713,77 @@
 			font-size:12px;
 		}
 
-		.menu{
-			width:100%;
-			flex-wrap:nowrap;
-			gap:12px;
-			overflow-x:auto;
-			padding-bottom:4px;
-			font-size:11px;
-			letter-spacing:.6px;
-			scrollbar-width:none;
+		.menu-toggle{
+			width:44px;
+			height:44px;
+			border:0;
+			border-radius:12px;
+			background:rgba(121,177,59,.24);
+			display:inline-flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			gap:5px;
+			cursor:pointer;
 		}
 
-		.menu::-webkit-scrollbar{
+		.menu-toggle span{
+			display:block;
+			width:18px;
+			height:2px;
+			border-radius:10px;
+			background:var(--verde);
+			transition:.25s;
+		}
+
+		.topo.menu-open .menu-toggle span:nth-child(1){
+			transform:translateY(7px) rotate(45deg);
+		}
+
+		.topo.menu-open .menu-toggle span:nth-child(2){
+			opacity:0;
+		}
+
+		.topo.menu-open .menu-toggle span:nth-child(3){
+			transform:translateY(-7px) rotate(-45deg);
+		}
+
+		.menu{
+			grid-column:1/-1;
+			width:100%;
 			display:none;
+			flex-direction:column;
+			gap:0;
+			overflow:hidden;
+			margin-top:4px;
+			border-top:3px solid var(--verde);
+			border-left:1px solid rgba(255,255,255,.1);
+			border-right:1px solid rgba(255,255,255,.1);
+			border-bottom:1px solid rgba(255,255,255,.1);
+			background:#153a26;
+			font-size:11px;
+			letter-spacing:.6px;
+		}
+
+		.topo.menu-open .menu{
+			display:flex;
 		}
 
 		.menu a{
-			white-space:nowrap;
-			padding:8px 10px;
-			border-radius:999px;
-			background:rgba(255,255,255,.06);
+			white-space:normal;
+			padding:13px 14px;
+			border-radius:0;
+			background:transparent;
+			border-bottom:1px solid rgba(255,255,255,.08);
+			color:#fff;
+		}
+
+		.menu a:last-child{
+			border-bottom:0;
+		}
+
+		.menu a.ativo{
+			background:rgba(121,177,59,.18);
 		}
 
 		.hero{
@@ -926,9 +999,15 @@
 			padding:54px 0 28px;
 		}
 
+		.rodape .container{
+			text-align:center;
+		}
+
 		.rodape-grid{
 			gap:24px;
 			padding-bottom:24px;
+			justify-items:center;
+			text-align:center;
 		}
 
 		.rodape-redes ul,
@@ -945,6 +1024,7 @@
 
 		.rodape-logo-bloco .logo{
 			color:#fff;
+			justify-content:center;
 		}
 
 		.rodape-logo-bloco .logo-img{
@@ -960,6 +1040,7 @@
 			flex-direction:column;
 			font-size:13px;
 			padding-top:20px;
+			text-align:center;
 		}
 	</style>
 </head>
@@ -975,7 +1056,13 @@
 			</div>
 		</a>
 
-		<nav class="menu">
+		<button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuMobile">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<nav class="menu" id="menuMobile">
 			<a href="#" class="ativo">Início</a>
 			<a href="#sobre">Sobre Nós</a>
 			<a href="#produtos">Produtos</a>
