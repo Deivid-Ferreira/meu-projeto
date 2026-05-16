@@ -646,8 +646,8 @@
 		html,
 		body{
 			width:100%;
-			min-width:380px;
-			overflow-x:hidden;
+			min-width:min(380px, 100vw);
+			overflow-x:clip;
 		}
 
 		body{
@@ -658,7 +658,7 @@
 		.container{
 			width:100%;
 			max-width:100%;
-			padding:0 20px;
+			padding:0 16px;
 		}
 
 		.topo{
@@ -771,7 +771,8 @@
 			position:relative;
 			right:auto;
 			bottom:auto;
-			width:100%;
+			width:auto;
+			max-width:100%;
 			margin:12px 0 0;
 			border-radius:22px;
 			padding:20px;
