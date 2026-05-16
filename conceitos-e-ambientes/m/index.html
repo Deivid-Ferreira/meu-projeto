@@ -192,6 +192,7 @@
 		.hero .container{
 			position:relative;
 			z-index:2;
+			margin-top: 60px;
 		}
 
 		.hero-texto{
@@ -641,32 +642,97 @@
 			font-size:14px;
 		}
 
-		@media(max-width:1100px){
-			.menu{display:none;}
-			.card-hero{display:none;}
-			.grid-categorias,
-			.grid-servicos{grid-template-columns:repeat(2,1fr);}
-			.sobre-grid,
-			.cta-grid{grid-template-columns:1fr;}
-			.hero h1{font-size:52px;line-height:58px;}
-			.sobre-conteudo h2,
-			.titulo-sessao,
-			.cta h2{font-size:40px;line-height:46px;}
+		/* Versao mobile dedicada sem media query */
+		html,
+		body{
+			width:100%;
+			min-width:380px;
 		}
 
-		@media(max-width:700px){
-			.container{padding:0 20px;}
-			.hero{min-height:720px;}
-			.hero h1{font-size:40px;line-height:46px;}
-			.hero-botoes{flex-direction:column;align-items:flex-start;}
-			.grid-categorias,
-			.grid-servicos,
-			.lista-diferenciais,
-			.rodape-grid{grid-template-columns:1fr;}
-			.grid-ambientes{grid-template-columns:1fr;grid-auto-rows:250px;}
-			.grid-ambientes figure:first-child,
-			.grid-ambientes figure:last-child{grid-column:auto;grid-row:auto;}
-			.copy{flex-direction:column;}
+		.container{
+			width:100%;
+			max-width:100%;
+			padding:0 20px;
+		}
+
+		.topo{
+			position:relative;
+			background:#111;
+			padding:18px 0;
+		}
+
+		.topo .container{
+			flex-direction:column;
+			align-items:flex-start;
+			gap:14px;
+		}
+
+		.menu{
+			width:100%;
+			flex-wrap:wrap;
+			gap:14px;
+		}
+
+		.hero{
+			min-height:720px;
+		}
+
+		.hero .container{
+			margin-top:0;
+		}
+
+		.hero-texto,
+		.hero p,
+		.ambientes .intro,
+		.sobre-selo{
+			max-width:100%;
+		}
+
+		.hero h1{
+			font-size:40px;
+			line-height:46px;
+		}
+
+		.hero-botoes{
+			flex-direction:column;
+			align-items:stretch;
+			margin-top:18px;
+		}
+
+		.hero-botoes .btn{
+			width:100%;
+		}
+
+		.card-hero{
+			position:relative;
+			right:auto;
+			bottom:auto;
+			width:100%;
+			margin:18px 20px 0;
+		}
+
+		.grid-categorias,
+		.sobre-grid,
+		.lista-diferenciais,
+		.grid-servicos,
+		.cta-grid,
+		.rodape-grid{
+			grid-template-columns:1fr;
+		}
+
+		.grid-ambientes{
+			grid-template-columns:1fr;
+			grid-auto-rows:250px;
+		}
+
+		.grid-ambientes figure:first-child,
+		.grid-ambientes figure:last-child{
+			grid-column:auto;
+			grid-row:auto;
+		}
+
+		.copy{
+			flex-direction:column;
 		}
 	</style>
 </head>
