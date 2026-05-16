@@ -931,6 +931,31 @@
 			padding-bottom:24px;
 		}
 
+		.rodape-redes ul,
+		.rodape-contacto ul,
+		.rodape-menu ul{
+			display:grid;
+			gap:8px;
+		}
+
+		.rodape-logo-bloco{
+			padding-top:8px;
+			border-top:1px solid rgba(255,255,255,.14);
+		}
+
+		.rodape-logo-bloco .logo{
+			color:#fff;
+		}
+
+		.rodape-logo-bloco .logo-img{
+			width:46px;
+			height:46px;
+		}
+
+		.rodape-logo-bloco .logo-text span{
+			color:rgba(255,255,255,.7);
+		}
+
 		.copy{
 			flex-direction:column;
 			font-size:13px;
@@ -1140,13 +1165,27 @@
 
 <footer class="rodape">
 	<div class="container">
-		<div class="rodape-grid">
-			<div>
-				<h3>Conceitos & Ambientes</h3>
-				<p>Empresa portuguesa especializada em materiais de construção, decoração, cerâmica, pavimentos, pisos flutuantes, aquecimento e soluções para espaços residenciais e comerciais.</p>
+				<div class="rodape-grid">
+			<div class="rodape-redes">
+				<h3>Redes</h3>
+				<ul>
+					<li>Instagram</li>
+					<li>Facebook</li>
+					<li>WhatsApp</li>
+				</ul>
 			</div>
 
-			<div>
+			<div class="rodape-contacto">
+				<h3>Contacto & Local</h3>
+				<ul>
+					<li>+351 000 000 000</li>
+					<li>geral@conceitoseambientes.pt</li>
+					<li>N105 1699, 4835-164 Guimarães</li>
+					<li>Guimarães, Portugal</li>
+				</ul>
+			</div>
+
+			<div class="rodape-menu">
 				<h3>Menu</h3>
 				<ul>
 					<li>Início</li>
@@ -1157,14 +1196,14 @@
 				</ul>
 			</div>
 
-			<div>
-				<h3>Contactos</h3>
-				<ul>
-					<li>N105 1699, 4835-164 Guimarães</li>
-					<li>Guimarães, Portugal</li>
-					<li>geral@conceitoseambientes.pt</li>
-					<li>+351 000 000 000</li>
-				</ul>
+			<div class="rodape-logo-bloco">
+				<a href="#" class="logo">
+					<img src="../logo.png" alt="Logo Conceitos e Ambientes" class="logo-img">
+					<div class="logo-text">
+						<strong>conceitos<br>& ambientes</strong>
+						<span>materiais de construção</span>
+					</div>
+				</a>
 			</div>
 		</div>
 
@@ -1177,5 +1216,6 @@
 
 </body>
 </html>
+
 
 
