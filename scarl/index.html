@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCARL - Serralharia Civil Armando Rodrigues, Lda.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Inter',Arial,sans-serif;color:#18212f;background:#f4f6f8;line-height:1.6}
+        a{text-decoration:none;color:inherit}
+        .topbar{background:#101820;color:#fff;font-size:14px;padding:10px 0}
+        .container{width:min(1180px,92%);margin:0 auto}
+        .topbar .container,.header .container{display:flex;align-items:center;justify-content:space-between;gap:25px}
+        .top-info{display:flex;gap:22px;flex-wrap:wrap;color:#cbd5e1}
+        .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:4px;padding:13px 22px;font-weight:700;transition:.2s}
+        .btn-red{background:#d71920;color:#fff}.btn-red:hover{background:#b9141a}
+        .btn-dark{background:#101820;color:#fff}.btn-dark:hover{background:#263241}
+        .header{background:#fff;padding:18px 0;box-shadow:0 6px 25px rgba(15,23,42,.08);position:sticky;top:0;z-index:20}
+        .logo{display:flex;align-items:center;gap:12px;font-weight:800;color:#101820;font-size:26px;letter-spacing:.5px}
+        .logo span{background:#d71920;color:#fff;padding:5px 9px;border-radius:3px;font-size:28px;letter-spacing:2px}
+        .logo small{display:block;font-size:11px;color:#697386;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-top:-4px}
+        .menu{display:flex;align-items:center;gap:26px;font-weight:700;color:#253044;font-size:14px;text-transform:uppercase}
+        .menu a:hover{color:#d71920}
+        .hero{position:relative;background:linear-gradient(90deg,rgba(16,24,32,.92),rgba(16,24,32,.68)),url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80') center/cover;min-height:650px;color:#fff;display:flex;align-items:center}
+        .hero-content{max-width:720px;padding:90px 0}
+        .tag{display:inline-block;background:rgba(215,25,32,.16);border-left:4px solid #d71920;color:#fff;padding:8px 13px;font-weight:800;text-transform:uppercase;font-size:13px;margin-bottom:20px}
+        h1{font-size:58px;line-height:1.05;margin-bottom:22px;font-weight:800;letter-spacing:-1.5px}
+        .hero p{font-size:19px;color:#e2e8f0;max-width:650px;margin-bottom:32px}
+        .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+        .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-58px;position:relative;z-index:5}
+        .stat{background:#fff;padding:26px;border-radius:8px;box-shadow:0 18px 45px rgba(15,23,42,.12);border-bottom:4px solid #d71920}
+        .stat strong{font-size:32px;color:#101820;display:block}.stat span{color:#697386;font-weight:600}
+        section{padding:85px 0}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:38px}
+        .section-head h2{font-size:38px;color:#101820;line-height:1.1}.section-head p{max-width:560px;color:#5c6677}
+        .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+        .about-text p{margin-bottom:18px;color:#374151}.about-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+        .about-list div{background:#fff;border-left:4px solid #d71920;padding:15px;font-weight:700;box-shadow:0 8px 20px rgba(15,23,42,.06)}
+        .image-card{background:#101820;padding:14px;border-radius:10px;box-shadow:0 20px 50px rgba(15,23,42,.18)}
+        .image-card img{width:100%;display:block;border-radius:6px;height:390px;object-fit:cover}
+        .dark-section{background:#101820;color:#fff}.dark-section .section-head h2{color:#fff}.dark-section .section-head p{color:#cbd5e1}
+        .products-toolbar{background:#fff;padding:18px;border-radius:10px;display:grid;grid-template-columns:1.4fr .8fr .8fr auto;gap:12px;margin-bottom:25px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+        .products-toolbar input,.products-toolbar select{height:48px;border:1px solid #d9e0ea;border-radius:6px;padding:0 14px;font-size:14px;color:#334155;background:#fff}
+        .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+        .product-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 14px 35px rgba(15,23,42,.08);transition:.2s;display:flex;flex-direction:column;height:100%}
+        .product-card:hover{transform:translateY(-4px)}
+        .product-card img{display:block;width:100%;height:210px;object-fit:cover;object-position:center;background:#d9e0ea}.product-body{padding:22px;display:flex;flex-direction:column;height:100%}
+        .product-category{color:#d71920;font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:8px}.product-body h3{font-size:20px;color:#101820;margin-bottom:10px}.product-body p{color:#5c6677;font-size:14px;margin-bottom:18px}
+        .product-body .btn{margin-top:auto;width:max-content}
+        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:#fff;border-radius:8px;padding:24px;border-top:4px solid #d71920}.service h3{color:#101820;margin-bottom:10px}.service p{color:#5c6677;font-size:14px}
+        .quality{display:grid;grid-template-columns:1fr 360px;gap:45px;align-items:center}.quality-card{background:#fff;color:#101820;padding:34px;border-radius:10px}.quality-card ul{padding-left:18px;color:#374151}.quality-card li{margin-bottom:12px}.cert{background:#fff;padding:18px;border-radius:10px;color:#101820;text-align:center}.cert img{width:100%;border:1px solid #e5e7eb;border-radius:6px;margin-bottom:15px}
+        .clients{display:flex;flex-wrap:wrap;gap:10px}.clients span{background:#fff;border:1px solid #e5e7eb;padding:10px 14px;border-radius:50px;font-weight:700;color:#475569;font-size:13px}
+        .contact{background:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}.contact-box,.form-box{background:#f8fafc;border-radius:10px;padding:30px}.contact-box h3,.form-box h3{font-size:26px;margin-bottom:18px;color:#101820}.contact-item{margin-bottom:16px;color:#475569}.form-box input,.form-box textarea{width:100%;border:1px solid #d9e0ea;border-radius:6px;padding:14px;margin-bottom:12px;font-family:inherit}.form-box textarea{height:130px;resize:vertical}
+        footer{background:#101820;color:#cbd5e1;padding:32px 0;text-align:center}
+        @media(max-width:900px){.menu{display:none}h1{font-size:40px}.stats,.product-grid,.services-grid,.about-grid,.quality,.contact-grid{grid-template-columns:1fr}.products-toolbar{grid-template-columns:1fr}.section-head{display:block}.topbar .container{display:block}.top-info{margin-top:10px}.hero{min-height:auto}.hero-content{padding:70px 0}}
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="container">
+            <div>SCARL - Serralharia Civil Armando Rodrigues, Lda.</div>
+            <div class="top-info">
+                <span>Ferro, aço, inox e alumínio</span>
+                <span>Certificação ISO 9001 desde 2005</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo"><span>SCARL</span><div><small>Serralharia Civil</small></div></a>
+            <nav class="menu">
+                <a href="#empresa">Empresa</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#qualidade">Qualidade</a>
+                <a href="#clientes">Clientes</a>
+                <a href="#contactos">Contactos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="tag">Desde 1996 no setor industrial</span>
+                    <h1>Soluções em serralharia civil, ferroviária e industrial.</h1>
+                    <p>Fabricamos componentes para o ramo ferroviário, portões, gradeamentos, suportes industriais, mobiliário urbano, estruturas metálicas e soluções personalizadas em ferro, aço, inox e alumínio.</p>
+                    <div class="hero-actions">
+                        <a href="#produtos" class="btn btn-red">Ver Produtos</a>
+                        <a href="#contactos" class="btn btn-dark">Pedir Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container stats">
+            <div class="stat"><strong>50+</strong><span>anos de know-how</span></div>
+            <div class="stat"><strong>1996</strong><span>fundação da SCARL</span></div>
+            <div class="stat"><strong>ISO</strong><span>9001 desde 2005</span></div>
+            <div class="stat"><strong>360º</strong><span>produção e acabamento</span></div>
+        </div>
+
+        <section id="empresa">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <div class="section-head" style="margin-bottom:22px">
+                        <h2>A empresa</h2>
+                    </div>
+                    <p>A SCARL é uma Serralharia Civil vocacionada para o fabrico de componentes para o ramo ferroviário, abrangendo também portões, gradeamentos, suportes publicitários, suportes industriais, serralharia decorativa, naves industriais, telheiros, plataformas de trabalho, guarda-corpos, grades de segurança, mobiliário urbano e cercas.</p>
+                    <p>Com um vasto parque de máquinas e uma forte ligação a fornecedores, trabalha com ferro, aço, inox e alumínio, oferecendo acabamentos como pintura, lacagem, galvanização e zincagem.</p>
+                    <div class="about-list">
+                        <div>Ramo ferroviário</div>
+                        <div>Serralharia civil</div>
+                        <div>Serralharia industrial</div>
+                        <div>Mobiliário urbano</div>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" alt="Indústria metalúrgica">
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="dark-section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Produtos cadastrados no gerenciador</h2>
+                    <p>Esta área pode ser alimentada pelo painel administrativo do site, com cadastro de produtos, categorias, fotos, descrição, destaque e filtros de pesquisa.</p>
+                </div>
+
+                <div class="products-toolbar">
+                    <input type="text" placeholder="Pesquisar produto, exemplo: portões, inox, ferroviário...">
+                    <select><option>Todas as categorias</option><option>Serralharia Civil</option><option>Material Ferroviário</option><option>Indústria</option><option>Mobiliário Urbano</option></select>
+                    <select><option>Ordenar por</option><option>Mais recentes</option><option>Nome A-Z</option><option>Destaques</option></select>
+                    <a href="#" class="btn btn-red">Pesquisar</a>
+                </div>
+
+                <div class="product-grid">
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Portões e gradeamentos">
+                        <div class="product-body">
+                            <div class="product-category">Serralharia Civil</div>
+                            <h3>Portões e gradeamentos</h3>
+                            <p>Portões deslizantes, elétricos, ornamentais, tubulares, grades de segurança e soluções sob medida.</p>
+                            <a href="#" class="btn btn-dark">Ver detalhes</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?auto=format&fit=crop&w=900&q=80" alt="Componentes ferroviários">
+                        <div class="product-body">
+                            <div class="product-category">Material Ferroviário</div>
+                            <h3>Componentes ferroviários</h3>
+                            <p>Catenária, carruagens, vagões, sinalética, patins, adaptações em veículos e ferramentas.</p>
+                            <a href="#" class="btn btn-dark">Ver detalhes</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80" alt="Suportes industriais">
+                        <div class="product-body">
+                            <div class="product-category">Indústria</div>
+                            <h3>Suportes industriais</h3>
+                            <p>Suportes para máquinas, painéis solares, proteções, rampas, moldes, peças e plataformas.</p>
+                            <a href="#" class="btn btn-dark">Ver detalhes</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1597008641621-cefdcf718025?auto=format&fit=crop&w=900&q=80" alt="Mobiliário urbano">
+                        <div class="product-body">
+                            <div class="product-category">Mobiliário Urbano</div>
+                            <h3>Mobiliário urbano</h3>
+                            <p>Totens publicitários, papeleiras, vasos, suportes de bicicleta, grelhas e estruturas urbanas.</p>
+                            <a href="#" class="btn btn-dark">Ver detalhes</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=900&q=80" alt="Inox e bancadas">
+                        <div class="product-body">
+                            <div class="product-category">Inox</div>
+                            <h3>Bancadas e inox</h3>
+                            <p>Bancadas, armários, lava-loiças, estruturas em inox e acabamentos personalizados.</p>
+                            <a href="#" class="btn btn-dark">Ver detalhes</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=900&q=80" alt="Soluções personalizadas">
+                        <div class="product-body">
+                            <div class="product-category">Sob medida</div>
+                            <h3>Soluções personalizadas</h3>
+                            <p>Traga a sua ideia ou desenho. A SCARL desenvolve a solução e transforma o projeto em realidade.</p>
+                            <a href="#" class="btn btn-dark">Ver detalhes</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Serviços e capacidade técnica</h2>
+                    <p>Estrutura preparada para corte, quinagem, furação, tornearia, soldadura e reparações em máquinas industriais e veículos pesados.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service"><h3>Guilhotina</h3><p>Corte até 20mm x 3000mm e corte até 6mm x 3000mm.</p></div>
+                    <div class="service"><h3>Quinadeira</h3><p>Capacidade de 300 tons x 4100mm e 100 tons x 3000mm.</p></div>
+                    <div class="service"><h3>Calandra</h3><p>Calandra até 2500mm x 5mm para trabalhos específicos.</p></div>
+                    <div class="service"><h3>Corte por plasma</h3><p>Corte automático até 540mm x 280mm e corte manual até 50mm.</p></div>
+                    <div class="service"><h3>Soldadura</h3><p>Soldadura por TIG, MIG/MAG e soldadura por pontos.</p></div>
+                    <div class="service"><h3>Reparações</h3><p>Reparações e alterações em máquinas industriais, veículos pesados, agrícolas, reboques e alfaias.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="qualidade" class="dark-section">
+            <div class="container quality">
+                <div class="quality-card">
+                    <h2 style="margin-bottom:18px">Qualidade e certificação</h2>
+                    <p style="margin-bottom:18px;color:#475569">A SCARL promove ações de melhoria contínua de acordo com a norma NP EN ISO 9001:2008, com foco em qualidade, prazos de entrega, rastreabilidade e satisfação dos clientes.</p>
+                    <ul>
+                        <li>Satisfação dos clientes e cumprimento dos requisitos.</li>
+                        <li>Cooperação com fornecedores para crescimento conjunto.</li>
+                        <li>Melhoria contínua, formação e auditorias internas.</li>
+                        <li>Rastreabilidade e identificação dos componentes do produto final.</li>
+                    </ul>
+                </div>
+                <div class="cert">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=700&q=80" alt="Certificação">
+                    <strong>Certificada ISO 9001 desde 2005</strong>
+                    <p style="font-size:14px;color:#64748b;margin-top:8px">Área para certificado cadastrado no gerenciador.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="clientes">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Clientes e sectores atendidos</h2>
+                    <p>Histórico de fornecimento para empresas do setor ferroviário, industrial, construção, energia e comunicações.</p>
+                </div>
+                <div class="clients">
+                    <span>EMEF</span><span>Bombardier</span><span>Somafel</span><span>Ferrovias</span><span>Siemens Portugal</span><span>Alstom Transporte</span><span>Promorail</span><span>CME</span><span>Neopul</span><span>PT Comunicações</span><span>E.I.P.</span><span>Somague</span><span>Teixeira Duarte</span><span>Tejo Energia</span><span>AB-Signal</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactos" class="contact">
+            <div class="container contact-grid">
+                <div class="contact-box">
+                    <h3>Contactos / Localização</h3>
+                    <div class="contact-item"><strong>Empresa:</strong><br>SCARL - Serralharia Civil Armando Rodrigues, Lda.</div>
+                    <div class="contact-item"><strong>Especialidades:</strong><br>Serralharia civil, industrial, ferroviária e mobiliário urbano.</div>
+                    <div class="contact-item"><strong>Mensagem:</strong><br>Contacte-nos, traga a sua ideia ou desenho que nós tratamos de o tornar real.</div>
+                    <a href="#" class="btn btn-red">Falar com a SCARL</a>
+                </div>
+                <form class="form-box">
+                    <h3>Pedir orçamento</h3>
+                    <input type="text" placeholder="Nome">
+                    <input type="email" placeholder="E-mail">
+                    <input type="text" placeholder="Telefone">
+                    <textarea placeholder="Descreva o produto ou serviço desejado"></textarea>
+                    <button type="button" class="btn btn-dark" style="border:0;width:100%;cursor:pointer">Enviar pedido</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">SCARL © Site institucional com gerenciador de produtos, fotos, categorias, certificados e conteúdos.</div>
+    </footer>
+    <script>
+        (() => {
+            const defaultFallback = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80';
+            document.querySelectorAll('.product-card img').forEach((img) => {
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.addEventListener('error', () => {
+                    if (img.dataset.fallbackApplied === '1') return;
+                    img.dataset.fallbackApplied = '1';
+                    img.src = img.dataset.fallback || defaultFallback;
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
